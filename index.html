@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#113b55">
+  <title>SIIU | Académico</title>
+  <link rel="icon" href="imagenes%20login/sello_400.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="principal.css?v=menu-academico-6">
+  <link rel="stylesheet" href="datos-personales.css?v=3">
+  <link rel="stylesheet" href="historial.css?v=2">
+  <link rel="stylesheet" href="periodos.css">
+  <link rel="stylesheet" href="calificaciones.css">
+  <script src="datos.js" defer></script>
+  <script src="app.js?v=scroll-suave" defer></script>
+</head>
+<body>
+  <header class="brand">
+    <img class="brand__seal" src="imagenes%20login/sello_400.png" alt="Escudo de la Universidad Central del Ecuador" width="130" height="130">
+    <div class="brand__title"><h1>SIIU</h1><p>ACADÉMICO</p></div>
+  </header>
+
+  <main id="login-main">
+    <section class="panel" id="login-view" aria-labelledby="login-title">
+      <h2 id="login-title">Iniciar sesión</h2>
+      <form id="login-form">
+        <div class="field">
+          <label for="username">Usuario</label>
+          <input id="username" name="username" type="text" placeholder="nick de correo" autocomplete="off" autocapitalize="none" spellcheck="false" required aria-describedby="login-error">
+        </div>
+        <div class="field field--password">
+          <label for="password">Contraseña</label>
+          <input id="password" name="password" type="password" placeholder="contraseña de correo" autocomplete="off" required aria-describedby="login-error">
+          <button class="password-toggle" id="password-toggle" type="button" aria-label="Mostrar contraseña" aria-pressed="false" aria-controls="password">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3.3"/><path class="eye-slash" d="m3 3 18 18" hidden/></svg>
+          </button>
+        </div>
+        <p class="form-error" id="login-error" role="alert"></p>
+        <button class="primary-button" type="submit">Ingresar</button>
+      </form>
+    </section>
+
+  </main>
+
+  <div id="home-view" class="portal" hidden>
+    <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+      <symbol id="icon-email" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="1"/><path d="m3 5 9 6 9-6"/></symbol>
+      <symbol id="icon-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><ellipse cx="12" cy="12" rx="4.5" ry="10"/><path d="M2 12h20"/></symbol>
+      <symbol id="icon-support" viewBox="0 0 24 24"><circle cx="15" cy="7" r="3"/><path d="M9 20v-2c0-3 2-5 6-5s7 2 7 5v2M7 5a3 3 0 0 0 0 6M2 18c0-3 1-5 5-5"/></symbol>
+      <symbol id="icon-logout" viewBox="0 0 24 24"><path d="M9 3H4v18h5M8 12h13m-6-6 6 6-6 6"/></symbol>
+      <symbol id="icon-picture" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="2"/><circle cx="8" cy="9" r="1.4"/><path d="m3 19 6-6 4 4 4-6 5 7"/></symbol>
+      <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+      <symbol id="icon-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="icon-facebook" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="currentColor" stroke="none"/><path d="M14 6h-2c-2 0-2 2-2 3v3H8m2 8V9m-2 3h7" stroke="#123b57" stroke-width="2.6"/></symbol>
+      <symbol id="icon-twitter" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M22 5.6a8 8 0 0 1-2.4.7 4.1 4.1 0 0 0 1.8-2.3 8 8 0 0 1-2.6 1 4.1 4.1 0 0 0-7 3.7A11.6 11.6 0 0 1 3.4 4.4a4.1 4.1 0 0 0 1.3 5.5 4 4 0 0 1-1.9-.5 4.1 4.1 0 0 0 3.3 4 4 4 0 0 1-1.8.1 4.1 4.1 0 0 0 3.8 2.8A8.2 8.2 0 0 1 2 18a11.6 11.6 0 0 0 17.8-9.8V7.7A8 8 0 0 0 22 5.6Z"/></symbol>
+      <symbol id="icon-youtube" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="5" fill="currentColor" stroke="none"/><path d="m10 8 6 4-6 4Z" fill="#123b57" stroke="none"/></symbol>
+    </svg>
+
+    <header class="mobile-header">
+      <button id="menu-toggle" class="icon-button" aria-label="Abrir menú" aria-expanded="false" aria-controls="sidebar"><svg class="icon"><use href="#icon-menu"/></svg></button>
+      <span>SIIU · ACADÉMICO</span>
+    </header>
+    <button class="sidebar-shade" id="sidebar-shade" aria-label="Cerrar menú" hidden></button>
+    <aside class="sidebar" id="sidebar" aria-label="Menú del estudiante">
+      <button class="sidebar-logo" id="home-button" title="Inicio" aria-label="Volver al inicio">
+        <img src="imagenes%20pantalla%20principal/sello_400.png" alt="Universidad Central del Ecuador" width="124" height="124">
+      </button>
+      <nav class="sidebar-nav" aria-label="Navegación principal">
+        <details id="student-menu">
+          <summary><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg><span>Datos estudiante</span></summary>
+          <button type="button" data-section="Datos personales">Datos personales</button>
+        </details>
+        <details id="reports-menu">
+          <summary><svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg><span>Reportes grado</span></summary>
+          <button type="button" data-section="Historial académico">Historial académico</button>
+        </details>
+      </nav>
+      <div class="sidebar-account">
+        <img src="imagenes%20pantalla%20principal/foto-carnet.jpg" alt="" class="account-photo">
+        <div class="account-name"><span>SAMANTA<br>CASAHUALPA</span><small>Usuario</small></div>
+        <button id="logout-button" class="icon-button logout-button" title="Cerrar sesión" aria-label="Cerrar sesión"><svg class="icon"><use href="#icon-logout"/></svg></button>
+      </div>
+    </aside>
+
+    <main class="dashboard" id="dashboard-main">
+      <div class="dashboard-grid">
+        <section class="greeting-card" aria-labelledby="welcome-title">
+          <div class="greeting-content">
+            <h2 id="welcome-title" tabindex="-1">Bienvenido/a SAMANTA</h2>
+            <p class="today" id="today"></p>
+            <div class="quick-actions">
+              <button class="quick-action" data-service="Email"><svg class="icon"><use href="#icon-email"/></svg><span>Email</span></button>
+              <a class="quick-action" href="https://www.uce.edu.ec/" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#icon-globe"/></svg><span>Página WEB</span></a>
+              <button class="quick-action" data-service="Soporte"><svg class="icon"><use href="#icon-support"/></svg><span>Soporte</span></button>
+            </div>
+          </div>
+          <img class="student-photo" src="imagenes%20pantalla%20principal/foto-carnet.jpg" alt="Fotografía de Samanta Casahualpa" width="112" height="149">
+        </section>
+        <img class="siiu-banner" src="imagenes%20pantalla%20principal/siiu.png" alt="Ilustración del Teatro Universitario con las letras SIIU" width="358" height="220">
+        <section class="id-card" aria-label="Carnet institucional">
+          <img src="imagenes%20pantalla%20principal/carnet_logo.png" alt="" width="120" height="95">
+          <h3>Carnet Institucional</h3>
+          <p>SAMANTA CASAHUALPA<br>PEREZ</p>
+          <button id="card-button" class="card-button"><svg class="icon"><use href="#icon-picture"/></svg>Ver Carnet</button>
+        </section>
+      </div>
+    </main>
+
+    <div id="record-view" hidden>
+      <header class="record-header">
+        <img src="imagenes%20pantalla%20principal/sello-datos-personales.png" alt="Sello de la Universidad Central del Ecuador" width="60" height="60">
+        <span class="record-account"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M3 20c0-7 18-7 18 0"/></svg>SAMANTA C.</span>
+      </header>
+      <main class="record-main" aria-labelledby="record-title">
+        <nav class="record-crumb" aria-label="Ruta de navegación">
+          <button type="button" data-record-home aria-label="Volver al inicio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m2 11 10-8 10 8M5 9v12h14V9M10 21v-8h4v8"/></svg></button>
+          <svg class="crumb-arrow" aria-hidden="true" viewBox="0 0 24 24"><path d="m9 4 8 8-8 8"/></svg>
+          <h1 id="record-title" tabindex="-1">Datos personales</h1>
+        </nav>
+        <div id="personal-content" hidden>
+        <section class="record-panel record-identity">
+          <h2>Información personal</h2>
+          <div class="record-fields">
+            <div class="record-field"><span class="record-label">Tipo de identificación:</span><span>CÉDULA</span></div>
+            <div class="record-field"><span class="record-label">No. identificación:</span><span>1755111505</span></div>
+            <div class="record-field"><span class="record-label">Nombres:</span><span>SAMANTA MICHELLE</span></div>
+            <div class="record-field"><span class="record-label">Primer apellido:</span><span>CASAHUALPA</span></div>
+            <div class="record-field"><span class="record-label">Segundo Apellido:</span><span>PEREZ</span></div>
+            <div class="record-field"><label class="record-label" for="record-field-6">Fecha de nacimiento(aaaa-mm-dd):</label><input id="record-field-6" type="text" value="17/01/2005" readonly class="record-mutedInput"></div>
+            <div class="record-field"><label class="record-label" for="record-field-7">Autoidentificación étnica: <span aria-hidden="true">*</span></label><select id="record-field-7" disabled class=""><option>MESTIZO/A</option></select></div>
+            <div class="record-field"><label class="record-label" for="record-field-8">Pueblo:</label><select id="record-field-8" disabled class="muted-field"><option>SELECCIONE...</option></select></div>
+            <div class="record-field"><label class="record-label" for="record-field-9">Sexo:</label><select id="record-field-9" disabled class="muted-field"><option>MUJER</option></select></div>
+            <div class="record-gap" aria-hidden="true"></div>
+            <div class="record-field"><label class="record-label" for="record-field-10">Género:</label><select id="record-field-10" disabled class=""><option>FEMENINO</option></select></div>
+            <div class="record-field"><label class="record-label" for="record-field-11">Orientación sexual:</label><select id="record-field-11" disabled class=""><option>HETEROSEXUAL</option></select></div>
+            <div class="record-field"><label class="record-label" for="record-field-12">Teléfono: <span aria-hidden="true">*</span></label><input id="record-field-12" type="text" value="3540187" readonly class="record-input"></div>
+            <div class="record-field"><label class="record-label" for="record-field-13">Celular: <span aria-hidden="true">*</span></label><input id="record-field-13" type="text" value="0985790998" readonly class="record-input"></div>
+            <div class="record-field"><span class="record-label">Mail institucional:</span><span>smcasahualpa@uce.edu.ec</span></div>
+            <div class="record-field"><label class="record-label" for="record-field-15">Mail personal: <span aria-hidden="true">*</span></label><input id="record-field-15" type="text" value="samantacasahualpa@hot…" readonly class="record-email"></div>
+            <div class="record-field"><label class="record-label" for="record-field-16">Estado Civil:</label><select id="record-field-16" disabled class="muted-field"><option>SOLTERO/A</option></select></div>
+            <div class="record-gap" aria-hidden="true"></div>
+            <div class="record-field"><span class="record-label">País nacimiento:</span><span>TUMBACO</span></div>
+            <div class="record-field"><span class="record-label">Nacionalidad:</span><span></span></div>
+            <div class="record-field"><span class="record-label">Provincia nacimiento:</span><span>N/A</span></div>
+            <div class="record-field"><span class="record-label">Cantón nacimiento:</span><span>N/A</span></div>
+          </div>
+        </section>
+        <section class="record-panel record-residence">
+          <h2>Información de residencia</h2>
+          <div class="record-fields">
+            <div class="record-field"><label class="record-label" for="record-field-21">País: <span aria-hidden="true">*</span></label><select id="record-field-21" disabled class=""><option>ECUADOR</option></select></div>
+            <div class="record-field"><label class="record-label" for="record-field-22">Provincia: <span aria-hidden="true">*</span></label><select id="record-field-22" disabled class=""><option>PICHINCHA</option></select></div>
+            <div class="record-field"><label class="record-label" for="record-field-23">Cantón: <span aria-hidden="true">*</span></label><select id="record-field-23" disabled class=""><option>QUITO</option></select></div>
+            <div class="record-field"><label class="record-label" for="record-field-24">Parroquia: <span aria-hidden="true">*</span></label><select id="record-field-24" disabled class=""><option>TUMBACO</option></select></div>
+            <div class="record-field"><label class="record-label" for="record-field-25">Calle principal: <span aria-hidden="true">*</span></label><input id="record-field-25" type="text" value="Av. Alfredo Escandon" readonly class="record-wide"></div>
+            <div class="record-field"><label class="record-label" for="record-field-26">Calle secundaria: <span aria-hidden="true">*</span></label><input id="record-field-26" type="text" value="Av. Jaime Roldos" readonly class="record-wide"></div>
+            <div class="record-field"><label class="record-label" for="record-field-27">No. de Casa: <span aria-hidden="true">*</span></label><input id="record-field-27" type="text" value="157" readonly class="record-wide"></div>
+            <div class="record-field"><label class="record-label" for="record-field-28">Referencia del domicilio: <span aria-hidden="true">*</span></label><input id="record-field-28" type="text" value="Portón café" readonly class="record-wide"></div>
+          </div>
+        </section>
+        <div class="record-actions">
+          <button type="button" data-record-home>Cancelar</button>
+          <button type="button" disabled title="Vista de estudiante: solo lectura">Guardar cambios</button>
+        </div>
+        </div>
+        <div id="history-content" hidden>
+          <section class="record-panel" aria-labelledby="history-student">
+            <h2 id="history-student">Información del estudiante</h2>
+            <dl class="history-student-data">
+              <dt>Identificación:</dt><dd>1755111505</dd>
+              <dt>Apellidos y nombres:</dt><dd>CASAHUALPA PEREZ SAMANTA MICHELLE</dd>
+            </dl>
+          </section>
+          <section class="record-panel" aria-labelledby="history-heading">
+            <h2 id="history-heading">Historial académico</h2>
+            <div class="history-list">
+              <table class="history-table" aria-labelledby="history-heading">
+                <colgroup><col class="level"><col class="degree"><col class="curriculum"><col class="status"><col></colgroup>
+                <thead><tr><th scope="col">Nivel académico</th><th scope="col">Carrera</th><th scope="col">Malla curricular</th><th scope="col">Estado</th><th scope="col">Opciones</th></tr></thead>
+                <tbody><tr>
+                  <td data-label="Nivel académico">GRADO</td>
+                  <td data-label="Carrera">MEDICINA (R)</td>
+                  <td data-label="Malla curricular">R2013</td>
+                  <td data-label="Estado">ACTIVO</td>
+                  <td data-label="Opciones"><div class="history-options">
+                    <button type="button" class="history-record" disabled>Récord académico</button>
+                    <button type="button" id="grades-button">Calificaciones</button>
+                    <button type="button" disabled>Matrículas</button>
+                  </div></td>
+                </tr></tbody>
+              </table>
+              <div class="history-count"><span aria-hidden="true">‹</span>1-1 de 1<span aria-hidden="true">›</span></div>
+            </div>
+          </section>
+          <div class="record-actions"><button type="button" data-record-home>Regresar</button></div>
+        </div>
+        <div id="periods-content" hidden>
+          <section class="record-panel" aria-labelledby="periods-student-title">
+            <h2 id="periods-student-title">Información del estudiante</h2>
+            <dl class="periods-student">
+              <dt>Identificación:</dt><dd>1755111505</dd>
+              <dt>Apellidos y nombres:</dt><dd>CASAHUALPA PEREZ SAMANTA<br>MICHELLE</dd>
+            </dl>
+          </section>
+          <div class="periods-table-container" role="region" aria-label="Períodos académicos" tabindex="0">
+            <table class="periods-table">
+              <colgroup><col style="width:26%"><col style="width:19.7%"><col style="width:15.1%"><col style="width:16.3%"><col></colgroup>
+              <thead><tr><th scope="col">Período académico</th><th scope="col">Carrera</th><th scope="col">Régimen</th><th scope="col">Semestre</th><th scope="col">Opción</th></tr></thead>
+              <tbody>
+                <tr><td>2026-2026</td><td>MEDICINA (R)</td><td>2013</td><td>QUINTO</td><td><button type="button" id="fifth-grades-button" aria-label="Ver calificaciones de 2026-2026">Ver calificaciones</button></td></tr>
+                <tr><td>2025-2026</td><td>MEDICINA (R)</td><td>2013</td><td>CUARTO</td><td><button type="button" disabled aria-label="Ver calificaciones de 2025-2026">Ver calificaciones</button></td></tr>
+                <tr><td>2025-2025</td><td>MEDICINA (R)</td><td>2013</td><td>TERCERO</td><td><button type="button" disabled aria-label="Ver calificaciones de 2025-2025">Ver calificaciones</button></td></tr>
+                <tr><td>2024-2025</td><td>MEDICINA (R)</td><td>2013</td><td>SEGUNDO</td><td><button type="button" disabled aria-label="Ver calificaciones de 2024-2025">Ver calificaciones</button></td></tr>
+                <tr><td>2024-2024</td><td>MEDICINA (R)</td><td>2013</td><td>SEGUNDO</td><td><button type="button" disabled aria-label="Ver calificaciones de 2024-2024">Ver calificaciones</button></td></tr>
+                <tr><td>2023-2024</td><td>MEDICINA (R)</td><td>2013</td><td>PRIMERO</td><td><button type="button" disabled aria-label="Ver calificaciones de 2023-2024">Ver calificaciones</button></td></tr>
+                <tr><td>2023-2023</td><td>MEDICINA (R)</td><td>2013</td><td>PRIMERO</td><td><button type="button" disabled aria-label="Ver calificaciones de 2023-2023">Ver calificaciones</button></td></tr>
+              </tbody>
+            </table>
+            <div class="periods-count"><span aria-hidden="true">‹</span><span>1-7 de 7</span><span aria-hidden="true">›</span></div>
+          </div>
+          <div class="record-actions"><button type="button" id="periods-back">Regresar</button></div>
+        </div>
+        <div id="grades-content" hidden>
+          <section class="record-panel" aria-labelledby="grades-student-heading">
+            <h2 id="grades-student-heading">Información del estudiante</h2>
+            <div class="grades-student">
+              <dl><dt>Identificación:</dt><dd>1755111505</dd></dl><div></div>
+              <dl><dt>Apellidos y nombres:</dt><dd>CASAHUALPA PEREZ SAMANTA<br>MICHELLE</dd></dl>
+              <dl><dt>Carrera:</dt><dd>MEDICINA (R)</dd></dl>
+              <dl><dt>Período académico:</dt><dd>2026-2026</dd></dl>
+              <dl><dt>Régimen:</dt><dd>2013</dd></dl>
+            </div>
+          </section>
+          <section class="grades-panel" aria-label="Calificaciones de quinto semestre">
+            <div class="grades-scroll" tabindex="0" role="region" aria-label="Tabla de calificaciones. Desplaza horizontalmente para ver la nota final y el estado.">
+              <table class="grades-table" aria-label="Calificaciones de QUINTO, período 2026-2026">
+                <colgroup><col style="width:216px"><col style="width:89px"><col style="width:81px"><col style="width:98px"><col style="width:106px"><col style="width:92px"><col style="width:87px"><col style="width:92px"><col style="width:85px"><col style="width:114px"><col style="width:94px"><col style="width:113px"><col style="width:64px"><col style="width:124px"></colgroup>
+                <thead><tr>
+                  <th scope="col">Asignatura</th><th scope="col">Matrícula</th><th scope="col">Paralelo</th>
+                  <th scope="col">Clf sum<br>intermedia<br>10%</th>
+                  <th scope="col">Clf form<br>colaborativa<br>25%</th>
+                  <th scope="col">Clf form<br>individual<br>35%</th>
+                  <th scope="col">Clf<br>sumativa<br>final<br>30%</th>
+                  <th scope="col">Asistencia<br>(%)</th><th scope="col">Nota<br>semestre</th>
+                  <th scope="col">Recuperación<br>60%</th><th scope="col">Supletorio</th>
+                  <th scope="col">Recuperación<br>40%</th><th scope="col">Nota<br>final</th><th scope="col">Estado</th>
+                </tr></thead>
+                <tbody>
+                <tr><td>MMP04BFT03　FARMACOLOGÍA BÁSICA 1</td><td>2</td><td>M4-009</td><td>18.00</td><td>18.80</td><td>13.80</td><td>13.30</td><td>100,00</td><td>15.32</td><td></td><td></td><td></td><td>15.32</td><td>APROBADO</td></tr>
+                <tr><td>MMP05BFT02　SEMIOLOGÍA Y FISIOPATOLOGÍA 2</td><td>1</td><td>M5-002</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>RETIRO APROBADO</td></tr>
+                <tr><td>MMP05BFT04　EPIDEMIOLOGÍA</td><td>1</td><td>M5-002</td><td>20.00</td><td>17.96</td><td>18.74</td><td>16.00</td><td>100,00</td><td>17.85</td><td></td><td></td><td></td><td>17.85</td><td>APROBADO</td></tr>
+                <tr><td>MMP05BIS07　BIOÉTICA BÁSICA</td><td>1</td><td>M5-002</td><td>20.00</td><td>20.00</td><td>20.00</td><td>12.40</td><td>100,00</td><td>17.72</td><td></td><td></td><td></td><td>17.72</td><td>APROBADO</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="grades-scrollbar"><span aria-hidden="true">◀</span><input id="grades-scroll-range" type="range" min="0" max="1" value="0" step="1" aria-label="Desplazar la tabla de calificaciones horizontalmente"><span aria-hidden="true">▶</span></div>
+            <div class="grades-count"><span aria-hidden="true">‹</span>1-4 de 4<span aria-hidden="true">›</span></div>
+          </section>
+          <div class="record-actions"><button type="button" id="grades-back">Regresar</button></div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="portal-footer">
+      <span>Copyright © 2017 - <span id="copyright-year">2026</span> - Universidad Central del Ecuador</span>
+      <div class="social-icons" aria-label="Redes institucionales">
+        <svg class="icon" role="img" aria-label="Facebook"><use href="#icon-facebook"/></svg>
+        <svg class="icon" role="img" aria-label="Twitter"><use href="#icon-twitter"/></svg>
+        <svg class="icon" role="img" aria-label="Instagram"><use href="#icon-instagram"/></svg>
+        <svg class="icon" role="img" aria-label="YouTube"><use href="#icon-youtube"/></svg>
+        <a href="https://www.uce.edu.ec/" target="_blank" rel="noopener noreferrer" aria-label="Página web institucional"><svg class="icon"><use href="#icon-globe"/></svg></a>
+      </div>
+    </footer>
+
+    <dialog id="portal-dialog" class="portal-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close icon-button" id="dialog-close" aria-label="Cerrar ventana"><svg class="icon"><use href="#icon-close"/></svg></button>
+      <h2 id="dialog-title"></h2>
+      <div id="dialog-content"></div>
+    </dialog>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #113b55;
+  --blue: #113b55;
+  --gold: #af962b;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+  background: #3d4446;
+  display: flex;
+  flex-direction: column;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(rgb(25 31 34 / 73%), rgb(25 31 34 / 73%)), url("imagenes%20login/contraloria-irregularidades-universidad-central.jpg") center center / cover no-repeat;
+}
+.brand { position: relative; min-height: 242px; flex-shrink: 0; }
+.brand__seal { position: absolute; top: 49px; left: 5.7%; width: 130px; height: 130px; object-fit: contain; }
+.brand__title { text-align: center; color: #fff; padding-top: 71px; }
+.brand h1 { font-size: 40px; line-height: 1.2; margin: 0 0 10px; }
+.brand__title p { font-size: 24px; font-weight: 600; margin: 0; }
+main { width: 100%; padding: 0 24px 36px; }
+.panel { width: 626px; max-width: 100%; margin: 0 auto; padding: 50px 110px 47px; border-radius: 16px; background: #ccc; }
+h2 { margin: 0 0 24px; font-size: 32px; line-height: 1.15; text-align: center; }
+.field { position: relative; background: rgb(255 255 255 / 18%); border-radius: 16px; padding: 9px 12px 7px; }
+.field + .field { margin-top: 24px; }
+.field label { display: block; font-size: 13px; line-height: 17px; color: #294653; cursor: text; }
+.field input { display: block; width: 100%; border: 0; outline: 0; padding: 3px 0 0; background: transparent; font: inherit; font-size: 14px; line-height: 19px; color: #163d52; border-radius: 2px; }
+.field input::placeholder { color: #777e80; opacity: 1; }
+.field:focus-within { outline: 2px solid var(--blue); outline-offset: 3px; background: rgb(255 255 255 / 40%); }
+.field--password { padding-right: 48px; }
+.password-toggle { position: absolute; right: 2px; top: 5px; width: 44px; height: 44px; padding: 9px; display: grid; place-items: center; color: var(--gold); background: transparent; border: 0; border-radius: 8px; cursor: pointer; }
+.password-toggle svg { width: 26px; height: 26px; }
+.primary-button { display: block; width: 100%; min-height: 44px; background: var(--blue); color: #fff; border: 1px solid var(--blue); border-radius: 5px; font: inherit; font-size: 16px; padding: 11px 16px; cursor: pointer; transition: background .15s; }
+.primary-button:hover { background: #1b506e; }
+button:focus-visible { outline: 3px solid #b79e35; outline-offset: 4px; }
+.form-error { min-height: 40px; margin: 0; padding: 6px 0; color: #8e2020; font-size: 13px; line-height: 17px; }
+@media (max-width: 767px) {
+  .brand { min-height: auto; display: flex; flex-direction: column; align-items: center; padding: 26px 16px 24px; gap: 24px; }
+  .brand__seal { position: static; width: 126px; height: 126px; }
+  .brand__title { padding: 0; }
+  .brand h1 { margin-bottom: 8px; }
+  main { padding: 0 28px 24px; }
+  .panel { width: 100%; padding: 50px max(24px, 17.5%) 47px; }
+  h2 { font-size: 28px; }
+  .field input { font-size: 16px; }
+}
+@media (max-width: 440px) {
+  .brand { padding-top: 22px; gap: 16px; }
+  .brand__seal { width: 104px; height: 104px; }
+  .brand h1 { font-size: 34px; }
+  .brand__title p { font-size: 20px; }
+  main { padding: 0 18px 20px; }
+  .panel { padding: 32px 24px; }
+  h2 { font-size: 27px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

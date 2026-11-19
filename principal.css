@@ -1,0 +1,110 @@
+/* Pantalla principal: medidas tomadas de la referencia de 1341 × 640 px. */
+.portal { --portal-blue: #123b57; --portal-gold: #bd9d22; color: #000; font: 13px Arial, Helvetica, sans-serif; }
+body.is-authenticated { background: #f0eded; }
+body.is-authenticated::before, body.is-authenticated > .brand, body.is-authenticated > #login-main { display: none; }
+.portal .icon { display: inline-block; width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+.icon-library { position: absolute; width: 0; height: 0; overflow: hidden; }
+.portal button, .portal a { -webkit-tap-highlight-color: transparent; }
+.portal button { font-family: inherit; cursor: pointer; }
+.portal button:focus-visible, .portal a:focus-visible { outline: 2px solid var(--portal-gold); outline-offset: 4px; }
+.sidebar { position: fixed; top: 0; left: 0; bottom: 33px; width: 198px; z-index: 20; display: flex; flex-direction: column; background: var(--portal-blue); border-radius: 0 16px 0 0; box-shadow: 4px 1px 7px #0004; color: #fff; }
+.sidebar { container-type: inline-size; }
+/* Escudo y menú al 110 % de las proporciones de la guía. */
+.sidebar-logo { width: 58.817%; aspect-ratio: 1; flex: none; border: 0; padding: 0; background: none; margin: 15.29cqw auto 18.7cqw; }
+.sidebar-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.sidebar-nav { display: grid; gap: 0; }
+.sidebar-nav details { margin: 1.54cqw 3.817cqw; background: var(--portal-blue); border-radius: 5px 5px 0 0; }
+.sidebar-nav details[open] { background: #fff; }
+.sidebar-nav button, .sidebar-nav summary { width: 100%; display: flex; align-items: center; gap: 3.41cqw; padding: 0 6.875cqw; color: #444c54; background: #fff; border: 0; text-align: left; font-size: clamp(13.2px, 5.346cqw, 15.4px); font-weight: 700; cursor: pointer; }
+.sidebar-nav .icon { width: 10px; height: 16px; stroke-width: 2.5; }
+.sidebar-nav summary { list-style: none; min-height: 21.78cqw; border-radius: 5px 5px 0 0; background: transparent; color: #fff; }
+.sidebar-nav details[open] > summary { color: #444c54; }
+.sidebar-nav summary::-webkit-details-marker { display: none; }
+.sidebar-nav summary:focus-visible { outline: 2px solid var(--portal-gold); outline-offset: -2px; }
+.sidebar-nav details[open] > summary .icon { transform: rotate(90deg); }
+.sidebar-nav summary .icon { width: 6.49cqw; height: 6.49cqw; stroke-width: 2; }
+.sidebar-nav details > button { height: auto; min-height: 25.212cqw; padding: 3.817cqw 4.587cqw 3.817cqw 8.404cqw; background: #fff; color: var(--portal-blue); font-size: clamp(14.3px, 6.49cqw, 18.7px); font-weight: 400; }
+.sidebar-nav details > button:is(:hover, :focus-visible) { background: #fff; text-decoration: underline; }
+.sidebar-account { margin-top: auto; display: flex; align-items: center; min-height: 60px; padding: 6px 6px 7px 0; }
+.account-photo { width: 29px; height: 40px; border: 2px solid #b89f38; border-radius: 50%; object-fit: cover; }
+.account-name { font-size: 14px; line-height: 15px; flex: 1; }
+.account-name small { display: block; font-size: 12px; line-height: 14px; }
+.icon-button { display: inline-flex; align-items: center; justify-content: center; border: 0; background: none; color: inherit; width: 40px; height: 40px; padding: 8px; }
+.logout-button { width: 27px; padding: 0; }
+.dashboard { margin-left: 198px; width: calc(100% - 198px); min-height: calc(100svh - 33px); padding: 96px 7.3vw 0 7.16vw; }
+.dashboard-grid { display: grid; grid-template-columns: minmax(0, 527fr) minmax(0, 358fr); column-gap: 4.77vw; row-gap: 72px; align-items: start; }
+.greeting-card { height: 220px; padding: 32px; display: flex; justify-content: space-between; gap: 20px; border-radius: 20px; background: #fff; box-shadow: 3px 5px 9px #0002; }
+.greeting-content { min-width: 0; }
+.greeting-card h2 { font-size: 26px; font-weight: 500; line-height: 31px; white-space: nowrap; margin: 1px 0 13px; text-align: left; }
+.greeting-card h2:focus { outline: none; }
+.today { font-size: 13px; line-height: 16px; margin: 0; white-space: nowrap; }
+.student-photo { width: 112px; height: 149px; object-fit: cover; }
+.quick-actions { display: flex; gap: 18px; margin-top: 32px; }
+.quick-action { width: 82px; height: 82px; flex-shrink: 0; border: 0; border-radius: 11px; background: var(--portal-blue); color: var(--portal-gold); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 3px; font-size: 12px; text-decoration: none; }
+.quick-action .icon { width: 25px; height: 25px; stroke-width: 1.9; }
+.quick-action:hover, .card-button:hover { background: #1b4b6b; }
+.siiu-banner { width: 100%; height: 220px; border: 1px solid #111; border-radius: 20px; object-fit: fill; box-shadow: 3px 5px 8px #0002; }
+.id-card { width: 190px; min-height: 219px; padding: 12px 10px 5px; border-radius: 20px; background: #fff; box-shadow: 3px 5px 9px #0002; text-align: center; }
+.id-card > img { display: block; width: 120px; height: 95px; object-fit: contain; margin: 0 auto 7px; }
+.id-card h3 { margin: 0 0 5px; font-size: 13px; line-height: 16px; }
+.id-card p { margin: 0 0 4px; font-size: 13px; line-height: 21px; font-weight: bold; }
+.card-button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; height: 33px; padding: 0 9px; border: 0; border-radius: 3px; background: var(--portal-blue); color: #fff; font-size: 12px; }
+.card-button .icon { width: 16px; height: 16px; }
+.portal-footer { position: relative; z-index: 30; min-height: 33px; padding: 0 220px; display: flex; align-items: center; justify-content: center; background: var(--portal-blue); color: #fff; text-align: center; font-size: 13px; }
+.social-icons { position: absolute; right: 27px; display: flex; align-items: center; gap: 20px; }
+.social-icons .icon { width: 16px; height: 16px; }
+.social-icons a { color: #fff; height: 16px; }
+.mobile-header, .sidebar-shade { display: none; }
+.portal-dialog { max-width: min(460px, calc(100% - 32px)); width: 460px; border: 0; border-radius: 15px; padding: 36px 28px 28px; color: #173a52; box-shadow: 0 12px 60px #0004; }
+.portal-dialog::backdrop { background: #071f33a6; }
+.portal-dialog--carnet { width: 566px; max-width: calc(100% - 24px); }
+.digital-card { display: block; width: 100%; height: auto; max-height: calc(100svh - 160px); object-fit: contain; }
+.portal-dialog h2 { font-size: 24px; text-align: left; margin-bottom: 20px; padding-right: 20px; }
+.portal-dialog p { font-size: 15px; line-height: 1.6; }
+.dialog-close { position: absolute; right: 8px; top: 8px; }
+.card-preview { display: flex; align-items: center; gap: 20px; border-top: 1px solid #dbe1e5; padding-top: 20px; }
+.card-preview img { width: 90px; height: 120px; object-fit: cover; }
+.card-preview p { margin: 5px 0; }
+@media (min-width: 1600px) {
+  .dashboard-grid { grid-template-columns: 527px 358px; gap: 72px 64px; }
+}
+@media (min-width: 901px) and (max-width: 1280px) {
+  .dashboard { padding: 60px 32px 30px; }
+  .dashboard-grid { gap: 50px 28px; grid-template-columns: minmax(430px, 1.5fr) minmax(220px, 1fr); }
+  .greeting-card { padding: 24px; gap: 12px; }
+  .greeting-card h2 { font-size: 22px; }
+  .student-photo { width: 90px; height: 120px; }
+  .quick-actions { gap: 12px; }
+  .quick-action { width: 72px; height: 72px; }
+}
+@media (max-width: 1050px) and (min-width: 901px) {
+  .dashboard-grid { grid-template-columns: minmax(0, 1fr); }
+  .greeting-card { max-width: 527px; }
+  .siiu-banner { max-width: 358px; }
+}
+@media (max-width: 900px) {
+  .mobile-header { height: 56px; display: flex; gap: 10px; align-items: center; padding: 8px 14px; background: var(--portal-blue); color: #fff; font-size: 14px; }
+  .sidebar { bottom: 0; width: 220px; transform: translateX(-110%); visibility: hidden; transition: transform .2s; z-index: 50; }
+  .portal.menu-open .sidebar { transform: translateX(0); visibility: visible; }
+  .sidebar-shade:not([hidden]) { display: block; position: fixed; inset: 0; border: 0; background: #0007; z-index: 40; }
+  .dashboard { width: 100%; margin: 0; padding: 28px 24px 36px; min-height: calc(100svh - 122px); }
+  .dashboard-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; max-width: 527px; margin: 0 auto; }
+  .greeting-card { width: 100%; }
+  .siiu-banner { width: 100%; height: auto; aspect-ratio: 358 / 220; }
+  .portal-footer { min-height: 66px; padding: 12px 20px; flex-direction: column; gap: 10px; font-size: 11px; line-height: 16px; }
+  .social-icons { position: static; gap: 20px; }
+}
+@media (max-width: 560px) {
+  .dashboard { padding: 24px 18px 32px; }
+  .greeting-card { position: relative; height: auto; min-height: 228px; padding: 22px 20px; display: block; }
+  .greeting-card h2 { font-size: 20px; line-height: 25px; white-space: normal; max-width: calc(100% - 76px); margin: 0 0 12px; }
+  .today { font-size: 11px; white-space: normal; max-width: calc(100% - 76px); line-height: 16px; }
+  .student-photo { position: absolute; right: 20px; top: 22px; width: 65px; height: 87px; }
+  .quick-actions { margin-top: 30px; gap: 12px; }
+  .quick-action { width: 76px; height: 76px; }
+}
+@media (max-width: 360px) {
+  .quick-actions { gap: 8px; }
+  .quick-action { width: 69px; height: 72px; font-size: 11px; }
+  .greeting-card { padding: 20px 16px; }
+}
